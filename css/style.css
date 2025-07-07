@@ -1,0 +1,776 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #fdfdfd;
+    color: #333;
+    line-height: 1.6;
+  }
+
+p{
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+}
+  
+  /* Navigation Bar */
+.header {
+    background-color: #008080;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+.header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+  }
+  
+.header li {
+    display: inline-block;
+  }
+  
+.header a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
+  }
+
+.logo {
+    height: 100%;
+    max-height: 60px; /* Keeps it from getting too large */
+    width: auto;       /* Maintains aspect ratio */
+    margin-right: auto; /* Pushes nav links to the right */
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Home Page */
+  /* Gradient Hero Section */
+  .home-screen {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Background video container */
+  .video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+  }
+  
+  .video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Foreground content */
+  .tophead {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+    height: 100%;
+    padding: 0 40px;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  .tophead-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .tophead-text p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    max-width: 700px;
+  }
+  
+  
+  /* Headings Section */
+.headings {
+    flex: 1;
+    color: #ffffff;
+    padding: 60px;
+    box-sizing: border-box;
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+  }
+  
+.headings h1 {
+    font-size: 2.8rem;
+    margin: 0 0 25px 0;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+.headings h1:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+.headings h1:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+.headings h1:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  
+  /* Animation */
+@keyframes fadeInUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive Styles */
+@media (max-width: 768px) {
+    .tophead {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .tophead img {
+      width: 100%;
+      border-radius: 0;
+    }
+  
+    .headings {
+      padding: 30px 20px;
+    }
+  
+    .headings h1 {
+      font-size: 2rem;
+    }
+  }
+
+    /* What we Do At Safety Zone */
+.explanation {
+    background-color: #444; /* darker contrast for better pop */
+    padding: 30px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* deeper shadow */
+    max-width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+      
+.explanation:hover {
+    transform: scale(1.02); /* subtle zoom effect */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+    }
+      
+.explanation h2 {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 10px 0; /* bottom margin for vertical spacing */
+    width: 100%;
+    }
+      
+.explanation p {
+    color: white;
+    margin: 0; /* or add top margin if needed */
+    text-align: center;
+    }
+
+      /* Services*/
+.services {
+    background-color: #c0e7e7;
+    padding: 30px 60px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    }
+
+.service-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    text-align: center;
+}
+    
+.service-item p {
+    margin: 16px 0 0;
+    padding: 0 10px;
+    line-height: 1.5;
+    font-size: 16px;
+    color: black;
+    }
+      
+.service-item img {
+    width: 250px;
+    height: 250px;        
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    }
+
+/* img */
+.stats { 
+    background-color: teal;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center; /* vertically align image and text */
+    gap: 40px; /* space between image and text */
+    padding: 20px;
+    width: 100%;
+
+}
+.stats img{
+    width: 600px;
+    height: 500px; 
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    object-fit: cover;
+    display: block;
+}
+
+.num h3, .num p { 
+    color: white;
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 30px;
+}
+
+.partners{
+    background-color: #c0e7e7;
+    padding: 30px 60px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+}
+
+.partners h1{
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.partners-logo {
+    display: flex;
+    flex-direction: row;     
+    flex-wrap: wrap;         
+    gap: 30px;             
+    justify-content: center; 
+  }
+.partners-logo img{
+    height: 150px;
+    object-fit: contain;
+}
+
+.home-founder {
+    padding: 30px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+    gap: 10px;
+  }
+  
+  .home-founder h1 {
+    font-size: 2.5rem;
+    color: #008080;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0px;
+  }
+  
+  .home-founder .bio {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .home-founder .bio img {
+    width: 30%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+  }
+  
+  .home-founder .bio-wrapper {
+    flex: 1;
+    max-width: 60%;
+  }
+  
+  .home-founder .bio-wrapper p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  
+
+/* Footer */
+.footer .horizontal-line {
+    border-bottom: 2px solid white; /* This creates a solid black line 2 pixels thick */
+    width: 95%;
+    margin: 20px 0;
+  }
+
+  .footer {
+    background-color: rgb(80, 80, 80);
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start; /* or space-between if you want spacing */
+  } 
+
+  
+  .footer ul {
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 2.0 rem;
+  }
+  
+  .footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+
+  .footer h2{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 0;
+    gap: 30px;
+    padding: 0;
+  }
+  
+
+/* ===== About Page Styles ===== */
+.about-us {
+    padding: 60px;
+    margin: 0 auto;
+    background-image: url("../images/background-img.png");
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+  }
+  
+  .about-us h1 {
+    font-size: 2.5rem;
+    color: #008080; 
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .about-us article {
+    margin-bottom: 40px;
+  }
+  
+  .about-us p {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    color: #333;
+  }
+  
+  .about-us ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .about-us li {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 28px;
+  }
+  
+  .founders {
+    padding: 30px 60px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 100px;
+    align-items: center;
+    gap: 40px;
+  }
+  
+.founders h1 {
+    font-size: 2.5rem;
+    color: #008080;
+    margin-bottom: 30px;
+}
+
+.founders .bio {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    text-align: left;
+    width: 100%;
+  }
+  
+  .founders .bio img {
+    width: 300px;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0; /* prevent image from shrinking */
+  }
+  .founders .bio-wrapper{
+    flex: 1;
+    max-width: 650px;
+  }
+  .founders .bio-wrapper p {
+    max-width: 100%;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .about-us {
+      padding: 30px 20px;
+    }
+  
+    .about-us h1 {
+      font-size: 2rem;
+    }
+  
+    .about-us p, .about-us li {
+      font-size: 1rem;
+    }
+  }
+
+/* ====== Our Mission Section ====== */
+.mission {
+    padding: 60px;
+    margin: 0 auto;
+    background-image: url(../images/background-img.png);
+    background-size: cover;
+    background-position: center;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Section Title */
+  .mission h1 {
+    font-size: 2.5rem;
+    color: #008080;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  
+  /* Slider Container */
+  .slider-wrapper {
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  /* Main slider scroll container */
+  .slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
+    border-radius: 0.5rem;
+    position: relative;
+  }
+  
+  /* Each individual slide */
+  .slide {
+    position: relative;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+  
+  /* Slide image */
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Text Overlay */
+  .slide-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+  }
+  
+  /* Slide title */
+  .slide-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #00ffff;
+  }
+  
+  /* Slide paragraph */
+  .slide-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  /* Navigation Dots */
+  .slider-nav {
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+  
+  /* Each dot */
+  .slider-nav a {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.6;
+    transition: opacity 250ms ease;
+    display: block;
+    cursor: pointer;
+  }
+  
+  /* Active and hover state */
+  .slider-nav a:hover,
+  .slider-nav a.active {
+    opacity: 1;
+    background-color: #00ffff;
+  }
+
+
+/* ======= Next ======== */
+  .vision {
+    position: relative;
+    height: 100vh; /* lock to full viewport */
+    width: 100vw;
+    margin: 0;
+    padding: 40px;
+    background-image: url("../images/background-img.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  
+  /* Background overlay for readability */
+  .vision::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: 0;
+  }
+  
+  .vision > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Header */
+  .vision h2 {
+    font-size: 2rem;
+    color: #008080;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  /* Layout */
+  .vision .bio {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  /* Image */
+  .vision .image-wrapper {
+    flex: 0 0 40%;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+  
+  .vision .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* Text */
+  .vision .bio-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    padding-left: 20px;
+    box-sizing: border-box;
+  }
+  
+  .vision .bio-wrapper p {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+  
+  .vision .bio-wrapper ul {
+    padding-left: 20px;
+    margin: 0;
+    font-size: 0.95rem;
+  }
+  
+  .vision .bio-wrapper li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  /* Inquires */
+
+  .inquiries{
+    padding: 60px;
+    margin: 0 auto;
+    background-image: url(../images/background-img.png);
+    background-size: cover;
+    background-position: center;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    text-align: center;
+    color: black;
+  }
+
+
+/* Testimonials */
+.testimonials{
+    padding: 60px;
+    margin: 0 auto;
+    background-image: url(../images/background-img.png);
+    background-size: cover;
+    background-position: center;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    text-align: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    min-height: 100vh;
+  }
+
+.testimonials .text-wrapper p{
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.testimonials .image-wrapper img{
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+  
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+
+
+
+  
+
+
+    
+  
+  

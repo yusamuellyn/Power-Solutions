@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SafetyZone - Our Mission</title>
+    <link rel='stylesheet' href='css/style.css'>
+</head>
+<body>
+    <header>
+        <nav class="header">
+            <img src="images/logo.png" alt="logo" class="logo" />
+            <ul>
+                <li><a class="home" href="index.html">Home</a></li>
+                <li><a class="pagelink" href="aboutus.html">About Us</a></li>
+                <li><a class="pagelink" href="ourmission.html">Our Mission</a></li>
+                <li><a class="next" href="next.html">Future Vision</a></li>
+                <li><a class="pagelink" href="inquires.html">Inquires</a></li>
+                <li><a class="pagelink" href="testimonials.html">Testimonials</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="mission">
+            <h1>Our Mission</h1>
+            <article>
+                <section class="container">
+                    <div class="slide-container">
+                        <div class="slider">
+                            
+                            <!-- Slide 1 -->
+                            <div class="slide" id="slide1">
+                                <img src="images/sz-without.png" alt="Transform Slide" />
+                                <div class="slide-text">
+                                    <h2>Transform</h2>
+                                    <p>
+                                        At <strong>SafetyZone</strong>, our mission is to transform the dining experience into one that is 
+                                        <strong>safe, inclusive, and empowering</strong> for individuals with food allergies—while enabling 
+                                        hospitality and foodservice operators to expand their customer base, build trust, and grow profits.
+                                    </p>
+                                    <p>
+                                        We’re not just consultants—we’re <strong>advocates, educators, and allies</strong> who understand 
+                                        this challenge firsthand. Let’s make dining <strong>safer, more inclusive, and more enjoyable</strong> 
+                                        for everyone.
+                                    </p>
+                                </div>
+                            </div>
+                    
+                            <!-- Slide 2 -->
+                            <div class="slide" id="slide2">
+                                <img src="images/sz-without.png" alt="Empower Slide" />
+                                <div class="slide-text">
+                                    <h2>Empower</h2>
+                                    <p>
+                                        Founded by Joshua Powers, SafetyZone was born from personal experience with the life-threatening 
+                                        realities of food allergies. We understand the <strong>fear, frustration, and daily limitations</strong> 
+                                        that can come with dining out. One mistake can have serious consequences.
+                                    </p>
+                                    <p>
+                                        That’s why we’re working toward a world where food safety is no longer a privilege—but a 
+                                        <strong>universal standard</strong>. A world where <strong>everyone</strong> can enjoy a meal with 
+                                        confidence and peace of mind.
+                                    </p>
+                                </div>
+                            </div>
+                    
+                            <!-- Slide 3 -->
+                            <div class="slide" id="slide3">
+                                <img src="images/sz-without.png" alt="Prioritize Slide" />
+                                <div class="slide-text">
+                                    <h2>Prioritize</h2>
+                                    <p>
+                                        We believe food allergy safety and inclusivity are not just ethical imperatives—they’re 
+                                        <strong>smart business</strong>. Restaurants and venues that prioritize allergen protocols 
+                                        <strong>earn trust, strengthen their reputation</strong>, and 
+                                        <strong>unlock new, loyal customer markets</strong>.
+                                    </p>
+                                    <p>
+                                        Together, we’re raising the standard—one operation at a time—so no one has to choose between 
+                                        their health and a great experience.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div> 
+
+                    </div> 
+
+                    <div class="slider-nav">
+                        <a href="#slide1" class="active"></a>
+                        <a href="#slide2"></a>
+                        <a href="#slide3"></a>
+                    </div>
+                </section>
+
+                <script>
+                    const slider = document.querySelector('.slider');
+                    const dots = document.querySelectorAll('.slider-nav a');
+            
+                    slider.addEventListener('scroll', () => {
+                        const scrollLeft = slider.scrollLeft;
+                        const slideWidth = slider.offsetWidth;
+                        const index = Math.round(scrollLeft / slideWidth);
+                        dots.forEach(dot => dot.classList.remove('active'));
+                        if (dots[index]) dots[index].classList.add('active');
+                    });
+                </script>
+            </article>              
+        </section>
+
+        <footer>
+            <nav class="footer">
+                <img src="images/logo.png" alt="logo" class="logo" />
+                <div class="horizontal-line"></div>
+                <ul>
+                    <li><a class="home" href="index.html">Home</a></li>
+                    <li><a class="pagelink" href="aboutus.html">About Us</a></li>
+                    <li><a class="pagelink" href="ourmission.html">Our Mission</a></li>
+                    <li><a class="next" href="next.html">Future Vision</a></li>
+                    <li><a class="pagelink" href="inquires.html">Inquires</a></li>
+                    <li><a class="pagelink" href="testimonials.html">Testimonials</a></li>
+                </ul>
+                <div class="horizontal-line"></div>
+            </nav>
+        </footer>
+    </main>
+</body>
+</html>
