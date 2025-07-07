@@ -10,6 +10,10 @@ body {
 p{
     font-family: 'Times New Roman', Times, serif, sans-serif;
 }
+
+li{
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+}
   
   /* Navigation Bar */
 .header {
@@ -58,25 +62,25 @@ p{
   .home-screen {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 80vh; /* OR 'auto' if not fullscreen */
     overflow: hidden;
   }
   
-  /* Background video container */
   .video-bg {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
     height: 100%;
-    z-index: 0;
+    width: 100%;
+    z-index: -1;
     overflow: hidden;
   }
   
   .video-bg video {
-    width: 100%;
     height: 100%;
+    width: 100%;
     object-fit: cover;
+    display: block;
   }
   
   /* Foreground content */
@@ -309,7 +313,7 @@ p{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 0px;
+    margin-top: 20px;
     gap: 10px;
   }
   
@@ -396,6 +400,16 @@ p{
     gap: 30px;
     padding: 0;
   }
+.footer .social{
+    display: flex;
+    flex-direction: row;
+    max-width: 300px;
+    gap: 10px;
+}
+.footer .social img{
+    height: 100px;
+    object-fit: contain;
+}
   
 
 /* ===== About Page Styles ===== */
