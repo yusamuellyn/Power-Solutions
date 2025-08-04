@@ -58,7 +58,7 @@ p, li {
 
 @media (max-width: 768px) {
   .header {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
   }
 
@@ -68,10 +68,6 @@ p, li {
     width: 100%;
   }
 
-  .logo {
-    width: 150px;
-    height: auto;
-  }
 }
 
 /* Hero Section */
@@ -297,6 +293,7 @@ p, li {
   gap: 40px;
   justify-content: center;
 }
+
 
 /* STATS SECTION */
 .stats {
