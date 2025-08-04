@@ -56,6 +56,24 @@ p, li {
   align-items: center;
 }
 
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .logo {
+    width: 150px;
+    height: auto;
+  }
+}
+
 /* Hero Section */
 .home-screen {
   position: relative;
