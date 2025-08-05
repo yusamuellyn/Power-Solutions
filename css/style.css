@@ -974,6 +974,15 @@ img, video {
   padding: 20px 0;
 }
 
+.image-wrapper img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+}
 
 .bio img {
   width: 100%;
