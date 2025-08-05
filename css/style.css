@@ -969,7 +969,8 @@ img, video {
   border-radius: 8px;
   object-fit: cover;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  align-items: center;
+  margin: 0 auto;
+  display: block;
 }
 
 .bio-wrapper {
