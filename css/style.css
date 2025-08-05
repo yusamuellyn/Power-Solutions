@@ -856,7 +856,7 @@ img, video {
 }
 
 .stats img {
-  max-width: 90%;
+  max-width: 100%;
 }
 
 .num h3,
