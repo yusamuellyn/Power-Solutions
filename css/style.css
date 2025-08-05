@@ -897,6 +897,7 @@ img, video {
   object-fit: cover;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   flex-shrink: 0;
+  justify-content: center;
 }
 
 .home-founder .bio-wrapper {
