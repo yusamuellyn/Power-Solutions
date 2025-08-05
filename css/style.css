@@ -964,7 +964,7 @@ img, video {
   max-width: 800px;
 }
 
-.bio img, .bio image-wrapper {
+.bio img, .bio .image-wrapper {
   width: 100%;
   max-width: 300px;
   border-radius: 8px;
