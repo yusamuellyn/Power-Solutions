@@ -854,11 +854,6 @@ img, video {
   gap: 20px;
   text-align: center;
 }
-
-.stats img {
-  max-width: 100%;
-}
-
 .num h3,
 .num p {
   font-size: clamp(1.2rem, 4vw, 2rem);
