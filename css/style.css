@@ -971,6 +971,8 @@ img, video {
   justify-content: center;
   text-align: center;
   padding: 20px 0;
+  margin: 0 auto;
+  display: block;
 }
 
 .image-wrapper img {
@@ -979,7 +981,7 @@ img, video {
   height: auto;
   border-radius: 8px;
   object-fit: cover;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  
 }
 
 .bio img, .bio .image-wrapper {
@@ -991,8 +993,6 @@ img, video {
   margin: 0 auto;
   display: block;
 }
-
-
 
 .bio-wrapper {
   width: 100%;
