@@ -847,17 +847,35 @@ img, video {
 /* Stats Section */
 .stats {
   background-color: teal;
-  padding: 20px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
-  text-align: center;
+  gap: 30px;
+  padding: 20px;
+  text-align: left;
 }
-.num h3,
-.num p {
-  font-size: clamp(1.2rem, 4vw, 2rem);
+
+.stats img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: contain;
+  flex: 1 1 300px;
+  border-radius: 8px;
+}
+
+.num {
+  flex: 1 1 300px;
+  max-width: 600px;
+}
+
+.num h3, .num p {
   color: white;
+  margin: 0 0 10px;
+  font-weight: 700;
+  line-height: 1.4;
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
 }
 
 .home-founder {
