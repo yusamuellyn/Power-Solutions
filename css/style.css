@@ -966,8 +966,7 @@ img, video {
 }
 
 /* Testimonials / Inquiries */
-.testimonials,
-.inquiries {
+.testimonials {
   padding: 20px;
   text-align: center;
 }
