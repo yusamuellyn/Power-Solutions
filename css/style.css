@@ -1007,7 +1007,6 @@ img, video {
 }
 
 .vision h2 {
-  font-size: clamp(1.6rem, 5vw, 2rem);
   text-align: center;
 }
 
