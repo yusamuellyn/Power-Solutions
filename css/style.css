@@ -963,6 +963,7 @@ img, video {
   width: 80%;
   max-width: 300px;
   border-radius: 8px;
+  align-items: center;
 }
 
 .bio-wrapper {
