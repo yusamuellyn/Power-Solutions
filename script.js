@@ -7,8 +7,8 @@ const fileCancelButton = document.querySelector("#file-cancel");
 const chatbotToggler =  document.querySelector("#chatbot-toggler");
 const closeChatbot = document.querySelector("#close-chatbot");
 
-const API_URL = "http://localhost:3000/api/gemini";
 
+const API_URL = "http://localhost:3000/api/gemini";
 
 const userData = {
     message: null, 
@@ -27,37 +27,57 @@ const createMessageElement = (content, ...classes) => {
     div.innerHTML = content;
     return div;
 };
-const generateBotResponse = async(incomingMessageDiv) => {
+
+const generateBotResponse = async (incomingMessageDiv) => {
     const messageElement = incomingMessageDiv.querySelector(".message-text");
-    chatHistory.push({role: "user", parts: [{ text: userData.message}, ...(userData.file.data ? [{incline_data: userData.file}] : [])]});
 
+    // Push the user message to chat history
+    chatHistory.push({
+        role: "user",
+        parts: [
+            { text: userData.message },
+            ...(userData.file.data
+                ? [{ inline_data: { mime_type: userData.file.mime_type, data: userData.file.data } }]
+                : [])
+        ]
+    });
 
+    // Prepare API request
     const requestOptions = {
         method: "POST",
-        headers: {"Content-Type" : "application/json"},
-        body: JSON.stringify({
-            contents: chatHistory
-        })
-    }
-    try{
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ contents: chatHistory })
+    };
+
+    try {
         const response = await fetch(API_URL, requestOptions);
         const data = await response.json();
-        if(!response.ok) throw new Error(data.error.message);
 
-        const apiResponseText = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, "$1").trim();
+        if (!response.ok) throw new Error(data.error?.message || "API request failed");
+
+        const apiResponseText = data?.candidates?.[0]?.content?.parts?.[0]?.text
+            ?.replace(/\*\*(.*?)\*\*/g, "$1")
+            ?.trim();
+
+        if (!apiResponseText) throw new Error("No response from API");
 
         messageElement.innerText = apiResponseText;
-        chatHistory.push({ role: "model", parts: [{ text: apiResponseText}]});
-        }catch (error){
-            console.log(error);
-            messageElement.innerText = error.message;
-            messageElement.style.color = "#ff0000";
-        }finally{
-            userData.file = {};
-            incomingMessageDiv.classList.remove("thinking");
-            chatBody.scrollTo({top: chatBody.scrollHeight, behavior: "smooth"});
-        }
+        chatHistory.push({ role: "model", parts: [{ text: apiResponseText }] });
+
+    } catch (error) {
+        console.error(error);
+        messageElement.innerText = error.message;
+        messageElement.style.color = "#ff0000";
+    } finally {
+        // Reset file data so next message doesn't reuse it
+        userData.file = { data: null, mime_type: null };
+        incomingMessageDiv.classList.remove("thinking");
+        chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: "smooth" });
     }
+};
+
+
+    
 const handleOutgoingMessage = (e) => {
     e.preventDefault();
     userData.message = messageInput.value.trim();
@@ -92,15 +112,15 @@ const handleOutgoingMessage = (e) => {
 
 messageInput.addEventListener("keydown", (e) => {
     const userMessage = messageInput.value.trim();
-    if (e.key === "Enter" && userMessage && !e.shiftKey && window.innerWdith > 768) {
+    if (e.key === "Enter" && userMessage && !e.shiftKey && window.innerWidth > 768) {
         handleOutgoingMessage(e);
     }
 });
 
 messageInput.addEventListener("input", () => {
-    messageInput.style.height= `${initialInputHieght}px`;
+    messageInput.style.height= `${initialInputHeight}px`;
     messageInput.style.height = `${messageInput.scrollHeight}px`;
-    document.querySelector(".chat-form").style.borderRadius = messageInput.scrollHeight > initialInputHieght ? "15px" : "32px";
+    document.querySelector(".chat-form").style.borderRadius = messageInput.scrollHeight > initialInputHeight ? "15px" : "32px";
 })
 
 fileInput.addEventListener("change", () => {
