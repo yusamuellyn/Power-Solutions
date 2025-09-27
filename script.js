@@ -8,7 +8,7 @@ const chatbotToggler =  document.querySelector("#chatbot-toggler");
 const closeChatbot = document.querySelector("#close-chatbot");
 
 
-const API_URL = "http://localhost:3000/api/gemini";
+const API_URL = "https://power-solutions.onrender.com/api/gemini";
 
 const userData = {
     message: null, 
