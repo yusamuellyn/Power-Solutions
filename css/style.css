@@ -372,6 +372,8 @@ p, li {
   height: 100px;
   object-fit: contain;
 }
+
+/* Chatbot */
 @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
 
 *{
@@ -379,6 +381,51 @@ p, li {
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
+}
+
+/* Tablet and small laptops */
+@media (max-width: 768px) {
+  .chatbot-popup {
+    right: 15px;
+    bottom: 80px;
+    width: 320px;      /* smaller than desktop */
+    max-width: 90%;    /* prevent overflow */
+    height: 420px;     /* shorter than desktop */
+    border-radius: 12px;
+  }
+
+  .chat-body {
+    height: calc(100% - 110px); 
+    padding: 15px;
+  }
+
+  #chatbot-toggler {
+    bottom: 20px;
+    right: 20px;
+    height: 45px;
+    width: 45px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .chatbot-popup {
+    right: 10px;
+    bottom: 70px;
+    width: 280px;      /* nice card size on mobile */
+    max-width: 95%;
+    height: 380px;     /* slightly shorter */
+    border-radius: 10px;
+  }
+
+  .chat-body .message .message-text {
+    font-size: 0.85rem;
+    max-width: 85%;    /* messages take up more width */
+  }
+
+  .chat-footer {
+    padding: 10px 12px 14px;
+  }
 }
 
 #chatbot-toggler{
